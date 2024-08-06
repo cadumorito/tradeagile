@@ -1,0 +1,268 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+}
+
+/* ===== Colours ===== */
+:root {
+    --body-color: #E4E9F7;
+    --nav-color: rgba(0, 0, 0, 0.5); /* Preto com 70% de opacidade */
+    --side-nav: rgba(0, 0, 0, 0.5) !important;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #111111;
+    --hover-opacity: 0.8; /* Opacidade do hover */
+}
+
+body.dark {
+    --body-color: #18191A;
+    --nav-color: rgba(0, 0, 0, 0.5); /* Preto com 70% de opacidade */
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+body.dark nav {
+    border: 1px solid #393838;
+}
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar .nav-links li a:hover {
+    background-color: #1E5E8B; /* Cor de fundo ao passar o mouse no menu responsivo */
+    border-radius: 4%;
+    color: #ffffff; /* Texto preto no hover */
+    opacity: 90%; /* Ajuste de opacidade do hover */
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+    margin-right: auto;
+}
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+    position: relative; /* Adicionado para dropdown */
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Remover bolinhas do menu principal */
+.nav-links li a::before {
+    display: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative; /* Faz o submenu se posicionar em relação ao item pai */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Faz o submenu aparecer abaixo do item pai */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    padding: 10px;
+    list-style: none;
+    z-index: 200; /* Garante que o submenu fique acima dos outros elementos */
+    width: 200px; /* Largura do submenu */
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: var(--text-color);
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+/* Ajuste do hover dentro do dropdown */
+.dropdown-menu li a:hover {
+    background-color: #ffffff;
+    color: black; /* Texto preto no hover */
+    opacity: var(--hover-opacity); /* Ajuste de opacidade do hover */
+}
+
+/* Mostrar o submenu ao passar o mouse no menu principal */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Menu Responsivo */
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+        margin-right: auto;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 100;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column; /* Adiciona uma direção vertical */
+    }
+
+    nav.active .menu {
+        left: 0;
+    }
+
+    nav.active .nav-bar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo-toggle .sidebarClose {
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+/* Menu Responsivo Dropdown */
+@media (max-width: 790px) {
+    .dropdown-menu {
+        position: absolute;
+        top: 0; /* Alinha o topo do dropdown com o topo do item pai */
+        left: 100%;
+        width: auto; /* Ajusta a largura conforme o conteúdo */
+        height: auto; /* Permite que o submenu cresça conforme o conteúdo */
+        background-color: var(--side-nav);
+        display: none;
+        white-space: nowrap; /* Garante que os itens fiquem em uma única linha */
+        flex-direction: row; /* Alinha os itens em linha */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao dropdown */
+        border-radius: 4%; /* Adiciona borda arredondada */
+    }
+
+    .dropdown-menu li {
+        margin: 0; /* Remove qualquer margem */
+    }
+
+    .dropdown-menu li a {
+        color: var(--text-color);
+        display: block;
+        text-decoration: none;
+        white-space: nowrap; /* Garante que o texto não quebre a linha */
+        text-align: center; /* Centraliza o texto dentro do link */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+
+    .dropdown-menu li a:hover {
+        background-color:  #1E5E8B; /* Cor de fundo ao passar o mouse no menu responsivo */
+        color: #ffffff; /* Texto branco no hover */
+        opacity: 0.9; /* Ajuste de opacidade do hover */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: flex; /* Mostra o dropdown lateralmente ao passar o mouse */
+        background-color:  #1E5E8B; /* Cor de fundo ao passar o mouse no menu responsivo */
+        top: 0; /* Alinha o topo do dropdown com o topo do item pai */
+        margin-top: 0;
+        padding-top: 0;
+        transform: none; /* Remove o ajuste de transformação vertical */
+    }
+
+    .nav-bar .nav-links li a:hover, 
+    .menu .nav-links li a:hover { /* Adiciona o hover para os itens do menu responsivo */
+        background-color:  #1E5E8B; /* Cor de fundo ao passar o mouse no menu responsivo */
+        border-radius: 4%;
+        color: #ffffff; /* Texto branco no hover */
+        opacity: 0.9; /* Ajuste de opacidade do hover */
+    }
+}
+
+

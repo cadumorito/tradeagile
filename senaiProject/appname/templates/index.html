@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TRADE.Agile</title>
+    <link rel="icon" href="{% static 'C:\Users\Windows\Desktop\VS Code\senaiProject\appname\static\appname\images\devagile.png' %}" type="image/x-icon">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/footer.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/navbar.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/background.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/principal.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+        }
+        .card {
+            margin-top: 1000px;
+            margin-bottom: 200px;
+            background-color: #1E5EB8;
+            border: 5px solid #FFDE59; /* Borda externa */
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 900px; /* Largura aumentada */
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 2px solid #FFDE59; /* Borda interna */
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        .card h1 {
+            color: #FFDE59;
+            font-size: 28px; /* Tamanho do título aumentado */
+            margin: 0 0 20px;
+            text-align: center; /* Título centralizado */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .card p {
+            color: #FFDE59;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="{% url 'login' %}">TRADE.Agile</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="{% url 'login' %}">TRADE.Agile</a></span>
+                    <i class='bx bx-x sidebarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'inicio' %}">Início</a></li>
+                    <li><a href="{% url 'galeria_produtos' %}">Produtos</a></li>
+                    <li><a href="{% url 'demonstrativo_tabelas' %}">Demonstrativo</a></li>
+                    {% if user.is_authenticated and user.is_staff %}
+                        <li><a href="{% url 'cadastro_clientes' %}">Cadastrar Cliente</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="cartBox" style="display: flex; justify-content: flex-end; width: 130.63px;">
+                <div class="account">
+                    <a href="{% url 'login' %}">
+                        <i class="bi bi-person"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                        </svg>
+                    </a>
+                </div>
+                {% if user.is_authenticated and user.is_staff %}          
+                <div class="cart" style="padding-left: 15px;">
+                    <a href="{% url 'realizar_venda' %}">
+                        <i class="bi bi-cart"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div class="hero-banner">
+        <div class="hero-banner__title" aria-hidden="true">TRADE AGILE</div>
+        <img class="hero-banner__image" src="{% static '/appname/images/trade.agile.png' %}">
+        <h1 class="hero-banner__title hero-banner__stroked-title">TRADE AGILE</h1>
+    </div>
+    <div class="card">
+        <h1>O que é TRADE.Agile?</h1>
+        <p>A TRADE.Agile é um sistema especializado em vendas, oferecendo soluções abrangentes tanto para vendas diretas de produtos quanto para vendas indiretas, como conteúdos premium. Como uma ramificação da renomada DEV.Agile, a TRADE.Agile se beneficia da sólida reputação e expertise de sua matriz, garantindo uma plataforma robusta e inovadora. Nosso foco é proporcionar uma experiência de venda eficiente e adaptável às diversas necessidades do mercado, combinando tecnologia de ponta com uma abordagem estratégica que visa maximizar os resultados para nossos parceiros e clientes. Com a TRADE.Agile, você tem acesso a ferramentas avançadas que facilitam a gestão de vendas e a integração com diversos canais, garantindo flexibilidade e sucesso em suas operações comerciais.</p>
+    </div>
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TRADE.AGILE. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="{% url 'inicio' %}">Loja virtual programada por DEV.AGILE</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password Reset Request
+From: your_email@example.com
+To: isaaccleitondasilva@gmail.com
+Date: Thu, 01 Aug 2024 10:48:24 -0000
+Message-ID: <172250930422.5372.4654197195497654346@DESKTOP-OA9H247.educ801>
+
+Click on the link to reset your password: http://localhost:8000/auth/reset/Mg/cb2loo-0d6d8a1f6a372a546c4e036af1f3cb8d/
+-------------------------------------------------------------------------------

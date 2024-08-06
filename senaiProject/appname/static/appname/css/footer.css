@@ -1,0 +1,37 @@
+footer {
+    background-color: #1E5E8B;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%; /* Garante que o footer ocupe toda a largura horizontal */
+    height: 80px;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    position: relative; /* Altere para relative se fixed estiver causando problemas */
+    margin-top: auto; /* Empurra o footer para o final da página */
+    z-index: 10000;
+  }
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

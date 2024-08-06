@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Container da barra de navegação */
+.nav-bar {
+    display: flex; /* Usando flexbox para layout */
+    width: 100%;
+    height: 70px; /* Ajuste conforme necessário */
+    background-color: #000; /* Cor de fundo opcional para visualização */
+}
+
+/* Estilização dos blocos */
+.block {
+    flex: 1; /* Faz com que cada bloco ocupe a mesma quantidade de espaço */
+    height: 100%;
+}
+
+/* Estilização das cores dos blocos */
+.green {
+    background-color: #00FF00; /* Exemplo de cor verde */
+}
+
+.blue {
+    background-color: #0000FF; /* Exemplo de cor azul */
+}
+
+.purple {
+    background-color: #800080; /* Exemplo de cor roxa */
+}
+
+/* Estilização do bloco central */
+.center {
+    flex: 2; /* Faz o bloco central ocupar o dobro do espaço comparado aos outros blocos */
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <div class="block green"></div>
+            <div class="block blue"></div>
+            <div class="block purple"></div>
+            <div class="block blue center"></div>
+            <div class="block purple"></div>
+            <div class="block blue"></div>
+            <div class="block green"></div>
+        </div>
+    </nav>
+    
+</body>
+</html>

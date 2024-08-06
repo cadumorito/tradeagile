@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <title>TRADE.Agile</title>
+    <link rel="icon" href="{% static 'C:\Users\Windows\Desktop\VS Code\senaiProject\appname\static\appname\images\devagile.png' %}" type="image/x-icon">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/footer.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/navbar.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/background.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/home.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/text.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'appname/css/teste.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static 'appname/js/teste.js' %}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    new VerticalMouseDrivenCarousel();
+});
+
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="{% url 'login' %}">TRADE.Agile</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="{% url 'login' %}">TRADE.Agile</a></span>
+                    <i class='bx bx-x sidebarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'inicio' %}">Início</a></li>
+                    <li><a href="{% url 'galeria_produtos' %}">Produtos</a></li>
+                    <li><a href="{% url 'demonstrativo_tabelas' %}">Demonstrativo</a></li>
+                    {% if user.is_authenticated and user.is_staff %}
+                        <li><a href="{% url 'cadastro_clientes' %}">Cadastrar Cliente</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="cartBox" style="display: flex; justify-content: flex-end; width: 130.63px;">
+                <div class="account">
+                    <a href="{% url 'login' %}">
+                        <i class="bi bi-person"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                        </svg>
+                    </a>
+                </div>
+                {% if user.is_authenticated and user.is_staff %}          
+                <div class="cart" style="padding-left: 15px;">
+                    <a href="{% url 'realizar_venda' %}"></a>
+                        <i class="bi bi-cart"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top: 200px;"><p class="text" style="color: white;">Confira os nossos</p><p class="text"><span class="fancy" style="font-family: 'Cheesy Fingers DEMO';">exemplares</span></p></div>
+    
+    <div class="container">
+        <header class="c-header c-header--archive c-header--project-list">
+            <div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9">
+                <ul class="c-mouse-vertical-carousel__list js-carousel-list">
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="0">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            01
+                        </span> Bets
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Jogos de Azar
+                            </p>
+                        </a>
+                    </li>
+    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="1">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            02
+                        </span> Entretenimento
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Site de Vídeos
+                            </p>
+                        </a>
+                    </li>
+    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="2">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            03
+                        </span> Luz, câmera, ação!
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Site de Streaming
+                            </p>
+                        </a>
+                    </li>
+    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="3">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            04
+                        </span> Comunidade de Vendas
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Site de Infoprodutos
+                            </p>
+                        </a>
+                    </li>
+    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="4">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            05
+                        </span> Compras
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Site de Produtos
+                            </p>
+                        </a>
+                    </li>
+                    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="5">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            06
+                        </span> Interação
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Site de Lives
+                            </p>
+                        </a>
+                    </li>
+                    
+                    <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="6">
+                        <a href="">
+                            <p class="c-mouse-vertical-carousel__eyebrow u-b4">
+                                <span>
+                            07
+                        </span> Momentos
+                            </p>
+    
+                            <p class="c-mouse-vertical-carousel__title u-a5">
+                                Rede Social de Fotos
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+    
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://esporteemidia.com/wp-content/uploads/2024/04/John-Vlog.jpg')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://media.discordapp.net/attachments/1177771493682323600/1268252239341031496/yt.png?ex=66abbf70&is=66aa6df0&hm=e77b5defd99f73db80e8edb79e39b7ad50c3e027255efc481798f8d3d6246855&=&format=webp&quality=lossless&width=878&height=468')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://i0.wp.com/assets.b9.com.br/wp-content/uploads/2013/11/netflix.jpg?fit=960%2C540&ssl=1')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://blog.retornomarketing.com.br/wp-content/uploads/2023/10/image-4-1024x477.png')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://cdnbr.guiadoinvestidor.com.br/2021/09/Shopee-1.jpeg')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://cdn.discordapp.com/attachments/1177771493682323600/1268252115520983072/furq.png?ex=66abbf53&is=66aa6dd3&hm=b34c41fefa2db985727d8ad0f44cb51f579e0c68425e867088e176bad89a62ce&')"></i>
+                <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('https://media.discordapp.net/attachments/1177771493682323600/1268252238871138345/tck.PNG?ex=66abbf70&is=66aa6df0&hm=9edd726387b8b50ec484ebd593a72f5480f3b3f4c069af2d51f38b7b0dd44915&=&format=webp&quality=lossless&width=876&height=468')"></i>
+                <i class="c-gradient-overlay"></i>
+            </div>
+        </header>
+    </div>
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TRADE.AGILE. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="{% url 'inicio' %}">Loja virtual programada por DEV.AGILE</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

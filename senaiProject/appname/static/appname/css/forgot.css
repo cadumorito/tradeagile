@@ -1,0 +1,100 @@
+.form-container {
+  max-width: 800px; /* Aumentar a largura máxima */
+  background-color: #fff;
+  padding: 40px 32px; /* Aumentar o padding */
+  font-size: 16px; /* Aumentar o tamanho da fonte */
+  font-family: inherit;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Aumentar o espaço entre os elementos */
+  box-sizing: border-box;
+  border-radius: 12px; /* Aumentar o raio da borda */
+  margin-top: 230px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.084), 0px 4px 6px rgba(0, 0, 0, 0.168);
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .logo-container {
+  text-align: center;
+  font-weight: 700; /* Aumentar o peso da fonte */
+  font-size: 24px; /* Aumentar o tamanho da fonte */
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Aumentar o espaço entre o label e o input */
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 8px; /* Aumentar a margem inferior */
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 16px 20px; /* Aumentar o padding interno */
+  border-radius: 8px; /* Aumentar o raio da borda */
+  font-family: inherit;
+  border: 1px solid #ccc;
+  font-size: 16px; /* Aumentar o tamanho da fonte */
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.7; /* Ajustar a opacidade do placeholder */
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #004AAD;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #fff;
+  background-color: #0099ff;
+  border: none;
+  width: 100%;
+  padding: 16px 20px; /* Aumentar o padding interno */
+  font-size: 16px; /* Aumentar o tamanho da fonte */
+  gap: 10px; /* Aumentar o espaço ao redor do texto */
+  margin: 16px 0; /* Ajustar a margem superior e inferior */
+  cursor: pointer;
+  border-radius: 8px; /* Aumentar o raio da borda */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.084), 0px 4px 6px rgba(0, 0, 0, 0.168);
+}
+
+.form-container .form-submit-btn:hover {
+  transform: scale(1.1);
+  background-color: #0d4e97;
+}
+
+.form-container .link {
+  color: #1778f2;
+  text-decoration: none;
+}
+
+.form-container .signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.form-container .signup-link .link {
+  font-weight: 400;
+}
+
+.form-container .link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password Reset Request
+From: tradeagile@dev.com
+To: gui@gui.com
+Date: Thu, 01 Aug 2024 16:01:12 -0000
+Message-ID: <172252807239.23476.16957655966303129865@DESKTOP-U9KMEN2>
+
+Click on the link to reset your password: http://127.0.0.1:8000/auth/reset/MQ/cb3060-925fb342081dc2cf8a18bb2637936edd/
+-------------------------------------------------------------------------------

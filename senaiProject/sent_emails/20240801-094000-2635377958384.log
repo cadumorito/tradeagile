@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password Reset Request
+From: tradeagile@dev.com
+To: Gleydes@gmail.com
+Date: Thu, 01 Aug 2024 12:40:00 -0000
+Message-ID: <172251600048.7004.9577859629585895545@DESKTOP-OA9H247.educ801>
+
+Click on the link to reset your password: http://localhost:8000/auth/reset/MTE/cb2quo-e2a6d0465245506281d7de97232702ec/
+-------------------------------------------------------------------------------

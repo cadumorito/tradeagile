@@ -1,0 +1,19 @@
+.text {
+  font-size: 80px;
+  text-transform: uppercase;
+  font-family: "Cheesy Fingers DEMO";
+  text-align: center;
+  line-height: 1;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .fancy {
+    background-image: url("https://img.freepik.com/free-photo/yellow-gold-oil-paint-abstract-background-oil-paint-yellow-gold-oil-paint-background-yellow-gold-marble-pattern-texture-abstract-background_1258-90639.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719187200&semt=ais_user");
+    background-size: 110% auto;
+    font-family: "Cheesy Fingers DEMO";
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}/*# sourceMappingURL=text.css.map */

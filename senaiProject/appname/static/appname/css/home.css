@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logos-slide {
+  white-space: nowrap;
+  animation: 20s slide infinite linear;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide img {
+  height: 60px;
+  margin: 0 50px;
+}
+
+.card {
+  white-space: wrap;
+  min-width: 400px;
+  margin: 0 10px;
+}
+
+@keyframes slide {
+  from{
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
